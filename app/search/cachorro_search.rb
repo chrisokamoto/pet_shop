@@ -45,6 +45,6 @@ class CachorroSearch
   end
 
   def search_page(criteria)
-    criteria.page(page).per(50)
+    criteria.page(page).per(15)
   end
 end

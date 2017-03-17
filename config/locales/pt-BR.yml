@@ -9,3 +9,10 @@ pt-BR:
       nome_dono: Nome do dono
       telefone: Telefone
       ultima_consulta: Data última visita
+  views:
+    pagination:
+      first: "&laquo; Primeira"
+      last: "Última &raquo;"
+      previous: "&lsaquo; Anterior"
+      next: "Próxima &rsaquo;"
+      truncate: "|"

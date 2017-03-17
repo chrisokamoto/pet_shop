@@ -37,7 +37,7 @@
 
 <div class="row">
   <div class="col-xs-12">
-    <table class="table table-striped spacing_margin_top">
+    <table class="table table-striped">
       <tr>
         <th><%= t("activerecord.attributes.cachorros.nome_dono") %></th>
         <th><%= t("activerecord.attributes.cachorros.telefone") %></th>
@@ -54,8 +54,8 @@
           <td><%= cachorro.telefone %></td>
           <td><%= cachorro.nome %></td>
           <td><%= cachorro.raca %></td>
-          <td><%= cachorro.genero %></td>
-          <td><%= cachorro.castrado %></td>
+          <td><%= t("global.cachorro.genero.#{cachorro.genero}") %></td>
+          <td><%= cachorro.castrado ? t("global.cachorro.castrado.sim") : t("global.cachorro.castrado.nao") %></td>
           <td><%= cachorro.data_nascimento.strftime("%d/%m/%Y") %></td>
           <td><%= cachorro.data_ultima_consulta.strftime("%d/%m/%Y") %></td>
         </tr>

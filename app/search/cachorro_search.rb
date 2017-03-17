@@ -30,8 +30,6 @@ class CachorroSearch
     search.total_count
   end
 
-  private
-
   def search_by_field(criteria)
     return criteria if field.blank?
 
@@ -39,11 +37,13 @@ class CachorroSearch
     criteria.where("lower(#{field}) like lower(?)", query_field)
   end
 
+  private
+
   def search_order(criteria)
     criteria.order(order || order_options.first.last)
   end
 
   def search_page(criteria)
-    criteria.page(page).per(15)
+    criteria.page(page).per(10)
   end
 end

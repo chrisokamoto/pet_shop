@@ -5,6 +5,9 @@ pt-BR:
         todos: Todos
         femea: Fêmea
         macho: Macho
+      castrado:
+        sim: Sim
+        nao: Não
   activerecord:
     attributes:
       cachorros:

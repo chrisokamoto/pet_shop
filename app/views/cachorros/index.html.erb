@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-xs-12">
+    <table class="table table-striped">
+      <tr>
+        <th><%= t(".nome") %></th>
+        <th><%= t(".raca") %></th>
+        <th><%= t(".genero") %></th>
+        <th><%= t(".castrado") %></th>
+        <th><%= t(".nome_dono") %></th>
+        <th><%= t(".telefone") %></th>
+        <th><%= t(".data_nascimento") %></th>
+        <th><%= t(".ultima_consulta") %></th>
+      </tr>
+      <% @cachorros.each do |cachorro| %>
+        <tr>
+          <td><%= cachorro.nome %></td>
+          <td><%= cachorro.raca %></td>
+          <td><%= cachorro.genero %></td>
+          <td><%= cachorro.castrado %></td>
+          <td><%= cachorro.nome_dono %></td>
+          <td><%= cachorro.telefone %></td>
+          <td><%= cachorro.data_nascimento.strftime("%d/%m/%Y") %></td>
+          <td><%= cachorro.data_ultima_consulta.strftime("%d/%m/%Y") %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-offset-5"><%= paginate @cachorros %></div>
+</div>

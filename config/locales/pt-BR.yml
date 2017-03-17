@@ -1,0 +1,11 @@
+pt-BR:
+  cachorros:
+    index:
+      raca: Raça
+      genero: Gênero
+      castrado: Castrado?
+      data_nascimento: Data nascimento
+      nome: Nome
+      nome_dono: Nome do dono
+      telefone: Telefone
+      ultima_consulta: Data última visita

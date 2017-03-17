@@ -1,28 +1,15 @@
-== README
+== Pet Shop
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Para instalar bibliotecas:
+- bower install (instala Bootstrap - precisa ter bower instalado no computador)
+- bundle install
 
-Things you may want to cover:
+Para popular banco:
+- rake db:migrate
+- rake db:populate (popula banco com 1000 registros aleatórios)
 
-* Ruby version
+Para rodar:
+- rails s
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Para rodar testes:
+- rspec

@@ -1,24 +1,61 @@
+<%= form_for @search, url: cachorros_url, html: {method: "GET"} do |f| %>
+
+  <h1><%= t(".cachorros") %></h1>
+
+  <div class="row padding-top-20">
+    <div class="col-xs-12">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="col-xs-10">
+            <%= f.text_field :query, placeholder: t(".buscar"), class: "form-control" %>
+          </div>
+          <div class="col-xs-2">
+            <%= f.select :field, options_for_select(@search.field_options, @search.field), {}, class: "form-control" %>
+          </div>
+          <br/><br/><br/>
+          <div class="col-xs-5">
+            <div class="col-xs-2">
+              <%= f.label t(".ordem"), class: 'label-inline' %>
+            </div>
+            <div class="col-xs-6">
+              <%= f.select :order, options_for_select(@search.order_options, @search.order), {}, class: "form-control", data: {"submit-on-change" => true} %>
+            </div>
+          </div>
+          <div class="col-xs-7">
+            <div class="col-xs-2 col-xs-offset-8">
+              <%= f.submit t('.buscar'), class: 'btn btn-info col-xs-12' %>
+            </div>
+            <div class="col-xs-1">
+              <%= link_to t(".limpar"), cachorros_path, class: 'btn btn-default' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
 <div class="row">
   <div class="col-xs-12">
-    <table class="table table-striped">
+    <table class="table table-striped spacing_margin_top">
       <tr>
-        <th><%= t(".nome") %></th>
-        <th><%= t(".raca") %></th>
-        <th><%= t(".genero") %></th>
-        <th><%= t(".castrado") %></th>
-        <th><%= t(".nome_dono") %></th>
-        <th><%= t(".telefone") %></th>
-        <th><%= t(".data_nascimento") %></th>
-        <th><%= t(".ultima_consulta") %></th>
+        <th><%= t("activerecord.attributes.cachorros.nome_dono") %></th>
+        <th><%= t("activerecord.attributes.cachorros.telefone") %></th>
+        <th><%= t("activerecord.attributes.cachorros.nome") %></th>
+        <th><%= t("activerecord.attributes.cachorros.raca") %></th>
+        <th><%= t("activerecord.attributes.cachorros.genero") %></th>
+        <th><%= t("activerecord.attributes.cachorros.castrado") %></th>
+        <th><%= t("activerecord.attributes.cachorros.data_nascimento") %></th>
+        <th><%= t("activerecord.attributes.cachorros.ultima_consulta") %></th>
       </tr>
       <% @cachorros.each do |cachorro| %>
         <tr>
+          <td><%= cachorro.nome_dono %></td>
+          <td><%= cachorro.telefone %></td>
           <td><%= cachorro.nome %></td>
           <td><%= cachorro.raca %></td>
           <td><%= cachorro.genero %></td>
           <td><%= cachorro.castrado %></td>
-          <td><%= cachorro.nome_dono %></td>
-          <td><%= cachorro.telefone %></td>
           <td><%= cachorro.data_nascimento.strftime("%d/%m/%Y") %></td>
           <td><%= cachorro.data_ultima_consulta.strftime("%d/%m/%Y") %></td>
         </tr>

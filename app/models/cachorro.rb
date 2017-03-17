@@ -1,5 +1,5 @@
 class Cachorro < ActiveRecord::Base
-  GENEROS = %w(F M)
+  GENEROS = %w(femea macho)
 
   validates :raca, presence: true
   validates :genero, inclusion: { in: GENEROS }

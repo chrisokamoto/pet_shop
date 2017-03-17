@@ -13,17 +13,16 @@ class CachorroSearch
 
   def order_options
     [
-      # [I18n.t("activerecord.attributes.user.id"), "users.id DESC"],
-      # [I18n.t("activerecord.attributes.user.company"), "users.company"],
-      # [I18n.t("activerecord.attributes.user.contact"), "users.first_name||users.last_name"]
+      [I18n.t("activerecord.attributes.cachorros.ultima_consulta"), "cachorros.data_ultima_consulta DESC"],
+      [I18n.t("activerecord.attributes.cachorros.nome_dono"), "cachorros.nome_dono"],
+      [I18n.t("activerecord.attributes.cachorros.nome"), "cachorros.nome"]
     ]
   end
 
   def field_options
     [
-      # [I18n.t("activerecord.attributes.user.company"), "users.company"],
-      # [I18n.t("activerecord.attributes.user.name"), "users.first_name||users.last_name"],
-      # [I18n.t("activerecord.attributes.user.email"), "users.email"]
+      [I18n.t("activerecord.attributes.cachorros.nome_dono"), "cachorros.nome_dono"],
+      [I18n.t("activerecord.attributes.cachorros.nome"), "cachorros.nome"]
     ]
   end
 
@@ -35,13 +34,13 @@ class CachorroSearch
 
   def search_by_field(criteria)
     return criteria if field.blank?
-    #
-    # query_field = field == 'users.first_name||users.last_name' ? "%#{query.gsub(/\s+/, "")}%" : "%#{query}%"
-    # criteria.where("lower(#{field}) like lower(?)", query_field)
+
+    query_field = "%#{query}%"
+    criteria.where("lower(#{field}) like lower(?)", query_field)
   end
 
   def search_order(criteria)
-    criteria.order(order || "cachorros.id DESC")
+    criteria.order(order || order_options.first.last)
   end
 
   def search_page(criteria)

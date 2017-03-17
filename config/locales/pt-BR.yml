@@ -1,18 +1,31 @@
 pt-BR:
+  global:
+    cachorro:
+      genero:
+        todos: Todos
+        femea: Fêmea
+        macho: Macho
+  activerecord:
+    attributes:
+      cachorros:
+        raca: Raça
+        genero: Gênero
+        castrado: Castrado?
+        data_nascimento: Data nascimento
+        nome: Nome cachorro
+        nome_dono: Nome dono
+        telefone: Telefone
+        ultima_consulta: Data última visita
   cachorros:
     index:
-      raca: Raça
-      genero: Gênero
-      castrado: Castrado?
-      data_nascimento: Data nascimento
-      nome: Nome
-      nome_dono: Nome do dono
-      telefone: Telefone
-      ultima_consulta: Data última visita
+      cachorros: Cachorros
+      buscar: Buscar
+      limpar: Limpar
+      ordem: Ordem
   views:
     pagination:
       first: "&laquo; Primeira"
       last: "Última &raquo;"
       previous: "&lsaquo; Anterior"
       next: "Próxima &rsaquo;"
-      truncate: "|"
+      truncate: "..."

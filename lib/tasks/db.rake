@@ -4,7 +4,7 @@ namespace :db do
   "Cimarron uruguayo", "Dálmata", "Dachshund", "Dobermann", "Dogue de Bordéus", "Dogue brasileiro", "Dogue canário", "Fila brasileiro",
   "Foxhound americano", "Hound", "Husky siberiano", "Mastim Inglês", "Old English Bulldog", "Pastor-alemão", "Patterdale Terrier",
   "Pinscher alemão", "Pinscher miniatura", "Labrador retriever", "Rottweiler", "São-bernardo", "Shih-tzu", "Terrier", "Terrier brasileiro"]
-  @genero = ['F', 'M']
+  @genero = ['femea', 'macho']
   @castrado = [true, false]
   @nomes = ["Akira", "Babalu", "Cacau", "Capitu", "Dara", "Eddie", "Elvis", "Fanny", "Kako", "Laika", "Lana", "Lilica", "Lucy", "Madonna", "Negão",
     "Nina", "Panda", "Porpeta", "Quixote", "Rayka", "Rex", "Ringo", "Sacha", "Thor", "Urso", "Wally", "Wendy", "Yoko", "Yuri", "Zaira"
